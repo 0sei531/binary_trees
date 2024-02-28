@@ -2,9 +2,9 @@
 #define _BINARY_TREES_H_
 
 /* Libraries */
-#include <stddef.h>	/* NULL */
-#include <stdio.h>	/* printf */
-#include <stdlib.h>	/* free, malloc */
+#include <stddef.h> /* NULL */
+#include <stdio.h>  /* printf, fprintf */
+#include <stdlib.h> /* free, malloc */
 
 /**
  * struct binary_tree_s - Binary tree node
@@ -16,10 +16,10 @@
  */
 struct binary_tree_s
 {
-	int n;
-	struct binary_tree_s *parent;
-	struct binary_tree_s *left;
-	struct binary_tree_s *right;
+    int n;
+    struct binary_tree_s *parent;
+    struct binary_tree_s *left;
+    struct binary_tree_s *right;
 };
 
 /* Basic Binary Tree */
@@ -38,7 +38,6 @@ binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value);
 void binary_tree_delete(binary_tree_t *tree);
-void binary_tree_delete_recursive(binary_tree_t *node);
 int binary_tree_is_leaf(const binary_tree_t *node);
 int binary_tree_is_root(const binary_tree_t *node);
 void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int));
@@ -57,7 +56,7 @@ binary_tree_t *binary_tree_uncle(binary_tree_t *node);
 
 /* Advanced Tasks */
 binary_tree_t *binary_trees_ancestor(
-		const binary_tree_t *first, const binary_tree_t *second);
+    const binary_tree_t *first, const binary_tree_t *second);
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
 int binary_tree_is_complete(const binary_tree_t *tree);
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
@@ -77,6 +76,9 @@ heap_t *heap_insert(heap_t **root, int value);
 heap_t *array_to_heap(int *array, size_t size);
 int heap_extract(heap_t **root);
 int *heap_to_sorted_array(heap_t *heap, size_t *size);
+
+/* New function prototype */
+void binary_tree_delete_recursive(binary_tree_t *node);
 
 #endif /*_BINARY_TREES_H_*/
 
